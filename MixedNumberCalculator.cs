@@ -376,6 +376,16 @@ namespace MixedNumberCalculator
             fraction.denominator = denominator;
             fraction=ReduceFraction(fraction);
 
+            //if the denominator is negative convert to positive value
+            //and convert denominator to positve value
+            if (fraction.denominator < 0 && fraction.numerator>0)
+            { 
+                fraction.numerator = fraction.numerator * -1;
+                fraction.denominator= fraction.denominator * -1;
+
+
+
+            };
 
             if (numerator != 0 && wholenumber!=0)
                 mixednumber = wholenumber.ToString() + "&" + fraction.numerator.ToString() + "/" + fraction.denominator.ToString();
@@ -384,6 +394,8 @@ namespace MixedNumberCalculator
             
             else
                 mixednumber = wholenumber.ToString();
+
+
 
             return mixednumber;
 
